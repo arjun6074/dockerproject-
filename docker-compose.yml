@@ -2,14 +2,28 @@
 version: "3.8"
 services:
   movies:
-    image: arjun6074/netflix:latest
+    image: arjun6074/movies:latest
     ports:
       - 81:80
     deploy:
       replicas: 3
   train:
-    image: arjun6074/netflix:latest
+    image: arjun6074/train:latest
     ports:
       - 82:80
     deploy:
+      replicas: 
+  train:
+    image: arjun6074/recharge:latest
+    ports:
+      - 83:80
+    deploy:
       replicas: 3
+      
+      dth:
+    image: arjun6074/dth:latest
+    ports:
+      - 84:80
+    deploy:
+      replicas: 3
+ 
